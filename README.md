@@ -76,6 +76,7 @@ This webpage must have the following additional functionality:
 ## Known Bugs
 
 Currently there is no use for the index pages for machines and engineers.  The delete page could be simplified as well. I dont think a confirmation page is neccesary. 
+
 ## Link
 
 This project is not hosted on GitHub Pages
