@@ -1,0 +1,24 @@
+@{
+  Layout = "_Layout";
+}
+@model List<Factory.Models.Machine>
+@using Factory.Models
+
+<h1> Welcome to Mr.SillyStrings Factory Repair Interface <h1>
+
+<h3>Machines available:</h3>
+@if (Model.Count == 0)
+      {
+        <p>There are not currently any machines available</p>
+      }
+ @foreach(Machine machine in Model)
+      {
+        <li>@machine.MachineName</li>
+      }
+
+
+<h3>Engineers available:</h3>
+
+
+<li>@Html.ActionLink("See all engineers", "Index", "Engineers")</li>
+<li>@Html.ActionLink("See all machines", "Index", "Machines")</li>
