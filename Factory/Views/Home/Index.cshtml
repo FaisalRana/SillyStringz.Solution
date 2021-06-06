@@ -13,12 +13,21 @@
       }
  @foreach(Machine machine in Model)
       {
-        <li>@machine.MachineName</li>
+        <li>@Html.ActionLink($"{machine.MachineName}", "Details", "Machines", new {id = machine.MachineId })</li>
       }
 
 
 <h3>Engineers available:</h3>
 
+@if (@ViewBag.AllEngineers.Count == 0)
+      {
+        <p>There are not currently any Engineers available</p>
+      }
+
+@foreach(Engineer engineer in @ViewBag.AllEngineers)
+      {
+        <li>@Html.ActionLink($"{engineer.EngineerName}", "Details", "Engineers", new {id = engineer.EngineerId })</li>
+      }
 
 <li>@Html.ActionLink("See all engineers", "Index", "Engineers")</li>
 <li>@Html.ActionLink("See all machines", "Index", "Machines")</li>
