@@ -28,8 +28,8 @@ else
   </ul>
 }
 
-<ul class="menu-links">
+<ul>
   <li>@Html.ActionLink("Edit this Machine", "Edit", new { id = Model.MachineId })</li>
   <li>@Html.ActionLink("Delete this Machine", "Delete", new { id = Model.MachineId })</li>
-  <li>@Html.ActionLink("Return to home", "Index")</li>
+  <li>@Html.ActionLink("Return to home", "Index", "Home")</li>
 </ul>

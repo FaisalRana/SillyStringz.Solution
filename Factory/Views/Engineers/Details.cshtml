@@ -31,8 +31,7 @@ else
 }
 
 <ul>
-  <li>@Html.ActionLink("Add a new Machine", "AddMachine", new { id = Model.EngineerId })</li>
   <li>@Html.ActionLink("Edit this Engineer", "Edit", new { id = Model.EngineerId })</li>
   <li>@Html.ActionLink("Delete this Engineer", "Delete", new { id = Model.EngineerId })</li>
-  <li>@Html.ActionLink("Return to home", "Index")</li>
+  <li>@Html.ActionLink("Return to home", "Index", "Home")</li>
 </ul>
