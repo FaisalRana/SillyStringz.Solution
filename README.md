@@ -65,15 +65,13 @@ This webpage must have the following additional functionality:
 
 
 ## User Stories 
-
-| Functionalities | 
-|:---: |
-| As the factory manager, Dr. SS needs to be able to see a list of all engineers, and they need to be able to see a list of all machines | 
-| As the factory manager, Dr. SS needs to be able to select an engineer, see their details, and see a list of all machines that engineer is licensed to repair. They also need to be able to select a machine, see its details, and see a list of all engineers licensed to repair it | 
-| As the factory manager, Dr. SS needs to add new engineers to our system when they are hired. They also need to add new machines to our system when they are installed | 
-| As the factory manager, Dr. SS should be able to add new machines even if no engineers are employed. They should also be able to add new engineers even if no machines are installed | 
-| As the factory manager, Dr. SS needs to be able to add or remove machines that a specific engineer is licensed to repair. They also need to be able to modify this relationship from the other side, and add or remove engineers from a specific machine |
-| Dr.SS should be able to navigate to a splash page that lists all engineers and machines. Users should be able to click on an individual engineer or machine to see all the engineers/machines that belong to it |
+ 
+- As the factory manager, Dr. SS needs to be able to see a list of all engineers, and they need to be able to see a list of all machines | 
+- As the factory manager, Dr. SS needs to be able to select an engineer, see their details, and see a list of all machines that engineer is licensed to repair. They also need to be able to select a machine, see its details, and see a list of all engineers licensed to repair it | 
+- As the factory manager, Dr. SS needs to add new engineers to our system when they are hired. They also need to add new machines to our system when they are installed | 
+- As the factory manager, Dr. SS should be able to add new machines even if no engineers are employed. They should also be able to add new engineers even if no machines are installed | 
+-  As the factory manager, Dr. SS needs to be able to add or remove machines that a specific engineer is licensed to repair. They also need to be able to modify this relationship from the other side, and add or remove engineers from a specific machine |
+- Dr.SS should be able to navigate to a splash page that lists all engineers and machines. Users should be able to click on an individual engineer or machine to see all the engineers/machines that belong to it |
 
 ## Known Bugs
 
@@ -126,7 +124,7 @@ This is a C# MVC web application built for the famous Dr. Sillystringz to keep t
 * _Requires Terminal Installation_
 * _Open the terminal on your local machine_
 * _Navigate to the directory inside of which you wish to house this project_
-* _Clone this project with the following command  `$ git clone <https://github.com/colchapm/Sillystringz.Solution.git>`_
+* _Clone this project with the following command  `$ git clone <https://github.com/faisalrana/Sillystringz.Solution.git>`_
 * _Next you will need to download and install .NET Core through this link if you don't already have it: https://dotnet.microsoft.com/download_
 * _After downloading and installing .NET Core, return to your terminal and navigate to the root directory by entering `$ cd Sillystringz.Solution`_
 * _Open this project in Visual Studio Code with the command `$ code .`_
