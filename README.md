@@ -38,26 +38,25 @@ This webpage must have the following additional functionality:
 * _Clone this project with the following command  `$ git clone <https://github.com/FaisalRana/SillyStringz.Solution.git>`_
 * _Download and install .NET Core through this link if you don't already have it: https://dotnet.microsoft.com/download_
 * _Open this project in Visual Studio Code with the command `$ code .`_
+* _Navigate to the `Factory` directory and create an **appsettings.json** file and input the following script (**note the name of the database below needs to match the name of the database you created (e.g. faisal_rana)**)_
+![Image of appsettings.json example](Factory/wwwroot/images/appsettings.json_test.png)
+
 * _Retrieve and install packages listed in the .csproj files with the command `$ dotnet restore`_
-* _Follow instructions below to install mySQL abd mySQL workbench_
-* _Create internal content for build with the command `$ dotnet run`_
+* _Follow instructions below to install mySQL abd mySQL workbench below_
+* _Create internal content for build with the command `$ dotnet build`_
+* _Follow instructions for migrating database below_
+* _Use command `$ dotnet run`_ to launch web application.
 
-
-**MySQL Application Setup and Instructions**
+**MySQL and MySQL Workbench Setup Instructions**
 
 * Download MySQL Workbench here: https://dev.mysql.com/downloads/file/?id=484391
-* In MySQL Workbench, navigate to the _Administration_ window and click _Data Import/Restore_
-* In the _Data Import_ screen, select _Import from Self-Contained File_, click the 3 dots on the right, and navigate to _Sillystrinz.Solution\collin_chapman.sql_
-* Under _Default Scheme to be Import To_ select the _New_ button
-  * Enter a name for your database (e.g. faisal_rana)
-  * Click _Ok_
-* Click _Start Import_
-* In the _Navigator_ > _Schemas_ tab, right click and select _Refresh All_. The new database will appear.
+* For Mac Users please [Click Here](https://dev.mysql.com/downloads/file/?id=484914) to download MySQL Installer
+* For Windows Users please [Click Here](https://dev.mysql.com/downloads/file/?id=484919)
+* Verify MySQL installation by opening the terminal and entering the command `mysql -uroot -p[THEPASSWORDYOUSELECTED]`
 
-* _In Visual Studio Code, navigate to the `Factory` directory and create an **appsettings.json** file and input the following script (**note the name of the database below needs to match the name of the database you created (e.g. faisal_rana)**)_
-
-![Image of appsettings.json example](Factory/wwwroot/images/appsettings.json_test.png)
-* _Back in the terminal, navigate to `$ cd Factory` and run the application with the command `$ dotnet run`
+**Database Migration Instructions**
+1. Navigate to Factory directory in terminal
+2. Use the command `dotnet ef migrations iniital` and  `dotnet ef database update` to create database migration. 
 
 
 ## Diagram of the Many-To-Many relationship used in this project
