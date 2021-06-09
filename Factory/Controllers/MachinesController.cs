@@ -34,7 +34,7 @@ namespace Factory.Controllers
     {
       _db.Machines.Add(Machine);
       _db.SaveChanges();
-      _db.EngineerMachine.Add(new EngineerMachine() {EngineerId = EngineerId, MachineId = Machine.MachineId });
+      _db.EngineerMachine.Add(new EngineerMachine() { EngineerId = EngineerId, MachineId = Machine.MachineId });
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
@@ -46,13 +46,13 @@ namespace Factory.Controllers
     }
 
     [HttpPost]
-    public ActionResult Edit (Machine machine)
+    public ActionResult Edit(Machine machine)
     {
       _db.Entry(machine).State = EntityState.Modified;
       _db.SaveChanges();
-      return RedirectToAction("Details", new {id = machine.MachineId });
+      return RedirectToAction("Details", new { id = machine.MachineId });
     }
-     public ActionResult Delete(int id)
+    public ActionResult Delete(int id)
     {
       var thisMachine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
       return View(thisMachine);
@@ -66,7 +66,7 @@ namespace Factory.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
-        public ActionResult AddEngineer(int id)
+    public ActionResult AddEngineer(int id)
     {
       var thisMachine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
       ViewBag.EngineerId = new SelectList(_db.Engineers, "EngineerId", "EngineerName");
@@ -75,22 +75,22 @@ namespace Factory.Controllers
 
     [HttpPost]
 
-public ActionResult AddEngineer(Machine machine, int engineerId)
+    public ActionResult AddEngineer(Machine machine, int engineerId)
     {
       if (engineerId != 0)
       {
-        _db.EngineerMachine.Add(new EngineerMachine() { MachineId = machine.MachineId, EngineerId = engineerId});
+        _db.EngineerMachine.Add(new EngineerMachine() { MachineId = machine.MachineId, EngineerId = engineerId });
       }
       _db.SaveChanges();
-      return RedirectToAction("Details", new { id = machine.MachineId});
+      return RedirectToAction("Details", new { id = machine.MachineId });
     }
     public ActionResult Details(int id)
     {
-      var thisMachine = _db.Machines  
-      .Include(machine => machine.JoinEntities) 
+      var thisMachine = _db.Machines
+      .Include(machine => machine.JoinEntities)
       .ThenInclude(join => join.Machine)
       .FirstOrDefault(machine => machine.MachineId == id);
-      return View(thisMachine);  
+      return View(thisMachine);
     }
 
   }

@@ -8,7 +8,7 @@
 
 <hr />
 
-@if(@Model.JoinEntities.Count == 0)
+@if (@Model.JoinEntities.Count == 0)
 {
   <p>This Machine does not have engineers to repair it</p>
 }
@@ -16,9 +16,9 @@ else
 {
   <h3>Here is a list of engineers assigned to work on @Model.MachineName:</h3>
   <ul>
-    @foreach(var join in Model.JoinEntities)
+  @foreach (var join in Model.JoinEntities)
     {
-      <li>@join.Machine.MachineName </li> 
+      <li>@join.Machine.MachineName </li>
       @using (Html.BeginForm("DeleteMachine", "Machines"))
       {
         @Html.Hidden("joinId", @join.EngineerMachineId)
