@@ -1,33 +1,31 @@
 @{
   Layout = "_Layout";
 }
-
 @model Factory.Models.Machine
-
-<h2>Machine Details</h2>
-
+<h2>Machine details</h2>
 <hr />
-
 @if (@Model.JoinEntities.Count == 0)
 {
-  <p>This Machine does not have engineers to repair it</p>
+  <p>This Machine does not have any Engineers to repair</p>
+  <li>@Html.ActionLink("Assign a engineer to repair machine", "AddEngineer", new {id = Model.MachineId })</li>
 }
 else
 {
-  <h3>Here is a list of engineers assigned to work on @Model.MachineName:</h3>
+  <h3>Here is a list of engineers assigned to @Model.MachineName</h3>
   <ul>
   @foreach (var join in Model.JoinEntities)
     {
-      <li>@join.Machine.MachineName </li>
-      @using (Html.BeginForm("DeleteMachine", "Machines"))
+      <li>@join.Engineer.EngineerName </li>
+      @using (Html.BeginForm("DeleteEngineer", "Machines"))
       {
         @Html.Hidden("joinId", @join.EngineerMachineId)
         <input type="submit" value="delete" />
+        <li>@Html.ActionLink("Add additional Engineer", "AddEngineer", new {id = Model.MachineId })</li>
       }
     }
   </ul>
 }
-
+</br>
 <ul>
   <li>@Html.ActionLink("Edit this Machine", "Edit", new { id = Model.MachineId })</li>
   <li>@Html.ActionLink("Delete this Machine", "Delete", new { id = Model.MachineId })</li>

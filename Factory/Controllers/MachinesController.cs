@@ -74,7 +74,6 @@ namespace Factory.Controllers
     }
 
     [HttpPost]
-
     public ActionResult AddEngineer(Machine machine, int engineerId)
     {
       if (engineerId != 0)
@@ -92,6 +91,12 @@ namespace Factory.Controllers
       .FirstOrDefault(machine => machine.MachineId == id);
       return View(thisMachine);
     }
-
+    public ActionResult DeleteEngineer(int joinId)
+    {
+      var thisEngineerMachine = _db.EngineerMachine.FirstOrDefault(entry => entry.EngineerMachineId == joinId);
+      _db.EngineerMachine.Remove(thisEngineerMachine);
+      _db.SaveChanges();
+      return RedirectToAction("Details", new { id = thisEngineerMachine.MachineId });
+    }
   }
 }
